@@ -11,6 +11,12 @@ import (
 )
 
 func main() {
+	// Ensure the downloads directory exists.
+	downloadFolder := "PDFs/"
+	// Create the directory if it does not exist.
+	if !directoryExists(downloadFolder) {
+		createDirectory(downloadFolder, 0755)
+	}
 	// Base URL for downloads.
 	url := "https://www.immersionrc.com/?download="
 	// Loop though 0 to 10000.
