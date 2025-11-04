@@ -25,6 +25,7 @@ func main() {
 			if strings.Contains(string(data), "Invalid download.") {
 				log.Println("No valid content at:", finalURL)
 			} else {
+				log.Println("Valid content found at:", finalURL)
 				// Append the data to a file.
 				err := appendByteToFile("downloads.txt", []byte(finalURL+"\n"))
 				if err != nil {
